@@ -1,0 +1,26 @@
+{
+  "name": "web-scrapping-jd",
+  "version": "1.0.0",
+  "description": "web scrapping on junodownload",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node dev.js",
+    "production": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "node-cron",
+    "node-fetch",
+    "cheerio"
+  ],
+  "author": "Rodrigo Toledo",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.1.2"
+  }
+}
