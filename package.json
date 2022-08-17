@@ -1,26 +1,42 @@
 {
-  "name": "web-scrapping-jd",
-  "version": "1.0.0",
-  "description": "web scrapping on junodownload",
-  "main": "index.js",
+  "name": "junodownload-scrapper",
+  "version": "0.2.0",
+  "description": "junodownload scrapper",
+  "main": "./dist/index.js",
   "scripts": {
     "dev": "node dev.js",
-    "production": "node index.js"
+    "prettier-format": "prettier --cache --write .",
+    "lint": "eslint .",
+    "build": "tsc"
   },
   "keywords": [
     "node",
-    "node-cron",
-    "node-fetch",
+    "junodownload",
+    "scrapper",
     "cheerio"
   ],
   "author": "Rodrigo Toledo",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
-    "node-cron": "^2.0.3",
-    "node-fetch": "^2.6.1"
+    "cheerio": "^1.0.0-rc.12"
   },
   "devDependencies": {
-    "prettier": "^2.1.2"
+    "@types/node": "^18.7.6",
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+		"node": ">=16",
+		"pnpm": ">=6"
+	},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/falsepopsky/junodownload-scrapper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/falsepopsky/junodownload-scrapper/issues"
   }
 }

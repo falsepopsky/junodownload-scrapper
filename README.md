@@ -1,36 +1,34 @@
-# JunoDownload Scrapper
+# junodownload Scrapper
 
 <div align="center">
-  	<img style="margin: 2em 0 2em 0" src="docs/media/logo.jpg" alt="JunoDownload Logo"/>
+  	<img src="docs/media/logo.jpg" alt="junodownload Logo"/>
 </div>
 
-In this project you can get the new and coming soon releases information and covers from JunoDownload website, not music.
+## :information_source: About
 
-Just like:
+With this scrapper you can get the new and coming soon releases `information` from JunoDownload website.
+
+Like the folowing:
 
 - Artist
-- Album Name
+- Album name
 - Label
 - Cover
 
 This is just a test to show you, what you can do with web scrapping working with cheerio.
 
-<div align="center" style="margin: 2em 0 2em 0">
+<div align="center">
     <img src="docs/media/new_releases.png" alt="JunoDownload new releases"/>
   	<img src="docs/media/coming_soon.png" alt="JunoDownload coming soon releases"/>
 </div>
 
-## Build with
+## Built with
 
 ```
-cheerio, node-cron, node-fetch
+cheerio, node-fetch
 ```
-
-<div style="margin: 4em 0 2em 0">
 
 ## How to start the Project
-
-</div>
 
 ### What you need
 
@@ -39,41 +37,35 @@ cheerio, node-cron, node-fetch
 ### Clone repository
 
 ```
-$ git clone git@github.com:falsepopsky/web-scraping-cheerio.git
+git clone git@github.com:falsepopsky/junodownload-scrapper.git
 ```
 
 ### Install the project and run
 
 ```
 # install dependencies
-npm install
+pnpm install
 
 # run the project
 npm run dev
 ```
 
+#### :open_file_folder: Folder Structure
+
 <div style="margin: 4em 0 2em 0">
-
-## Folder Structure
-
-</div>
 
     .
     ├── docs                    # Documentation files
     ├── src                     # Source files
     │   ├── data          		# Contains .json files about the scrapped website
-    │   ├── images
-    │   │   ├── releases        # Covers of the releases
     │   ├── services            # services like scrapping, download the images and writing JSON Files
     ├── index.js                # To run the project in production mode
     ├── dev.js                  # To run the project in dev mode
     └── README.md
 
-<div style="margin: 4em 0 2em 0">
+</div>
 
 ## Things to do
-
-</div>
 
 Like i said, this is a test, i would like to improve more the code and other things, but i spend a lot of my time learning new stuff.
 
