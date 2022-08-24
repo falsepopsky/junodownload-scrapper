@@ -4,7 +4,7 @@ export async function fetcher(url: string) {
     if (response.status !== 200) {
       throw new Error('Failed to fetch website.');
     }
-    return response.text();
+    return await response.text();
   } catch (error) {
     console.error(error);
   }

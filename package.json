@@ -3,10 +3,11 @@
   "version": "0.2.0",
   "description": "junodownload scrapper",
   "main": "./dist/index.js",
+  "type": "module",
   "scripts": {
     "dev": "ts-node-dev --respawn src/index.ts",
     "prettier-format": "prettier --cache --write .",
-    "lint": "eslint",
+    "lint": "eslint . --ext .ts",
     "build": "rm -rf dist && tsc",
     "start": "node dist/index.js",
     "prepare": "husky install"
@@ -23,18 +24,19 @@
     "cheerio": "1.0.0-rc.12"
   },
   "devDependencies": {
-    "@types/node": "^18.7.6",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@types/node": "^18.7.11",
+    "@typescript-eslint/eslint-plugin": "^5.34.0",
+    "@typescript-eslint/parser": "^5.34.0",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard-with-typescript": "^22.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-promise": "^6.0.0",
     "husky": "^8.0.1",
     "prettier": "^2.7.1",
     "ts-node-dev": "^2.0.0",
-    "typescript": "*"
+    "typescript": "^4.7.4"
   },
   "engines": {
     "node": ">=18",

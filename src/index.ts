@@ -1,5 +1,5 @@
-import { JUNOSITE } from './utils/constants';
-import { fetcher } from './utils/fetcher';
+import { JUNOSITE } from './utils/constants.js';
+import { fetcher } from './utils/fetcher.js';
 
 async function start() {
   const data = await fetcher(JUNOSITE);
