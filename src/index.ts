@@ -1,9 +1,9 @@
-import { JUNOSITE } from './utils/constants.js';
-import { fetcher } from './utils/fetcher.js';
+import { JUNOSITE } from './core/constants.js';
+import { fetcher } from './core/fetcher.js';
 
-async function start() {
+async function start(): Promise<void> {
   const data = await fetcher(JUNOSITE);
   console.log(data);
 }
 
-start().catch((error) => console.error(error));
+start().catch((err) => console.log(err));

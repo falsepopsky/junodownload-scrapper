@@ -4,6 +4,7 @@
     "module": "NodeNext",
     "outDir": "./dist",
     "moduleResolution": "NodeNext",
+    "declaration": true,
     "rootDir": "./src",
     "resolveJsonModule": true,
     "allowJs": true,
@@ -13,8 +14,10 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "removeComments": true,
+    "lib": ["ESNext", "DOM"]
   },
-  "include": ["src/**/*.ts", "**/*.cts"],
+  "include": ["src"],
   "exclude": ["node_modules", "**/*.d.ts"]
 }

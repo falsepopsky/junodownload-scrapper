@@ -1,6 +1,7 @@
 node_modules
 docs
 dist
-.vscode
-.github
-.husky
+vscode
+github
+husky
+eslintrc.js

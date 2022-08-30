@@ -21,7 +21,7 @@ With this scrapper you can get the new and coming soon releases `information` fr
 ## :package: Built with
 
 - [cheerio](https://www.npmjs.com/package/cheerio)
-- [fetch:nodejs](https://nodejs.org/en/)
+- [fetch](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch)
 
 ## :pushpin: Setup
 
@@ -39,19 +39,13 @@ git clone git@github.com:falsepopsky/junodownload-scrapper.git
 
 **:checkered_flag: Install and start the scrapper**
 
-1.
-
 ```
 pnpm install
 ```
 
-2.
-
 ```
 pnpm build
 ```
-
-3.
 
 ```
 pnpm start
