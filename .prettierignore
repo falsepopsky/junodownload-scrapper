@@ -1,4 +1,6 @@
+.vscode
+.github
 node_modules
-pnpm-lock.yaml
 docs
 dist
+pnpm-lock.yaml

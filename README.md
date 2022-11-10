@@ -53,11 +53,9 @@ pnpm start
 
 #### :open_file_folder: Folder Structure
 
-<div>
-
+```
     .
     ├── docs                    # Documentation files
     ├── src                     # Source files
     └── README.md
-
-</div>
+```

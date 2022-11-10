@@ -4,4 +4,4 @@ dist
 vscode
 github
 husky
-eslintrc.js
+eslintrc.json
