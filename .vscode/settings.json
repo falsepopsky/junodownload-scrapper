@@ -9,5 +9,6 @@
   "editor.guides.bracketPairs": true,
   "editor.tabSize": 2,
   "npm.scriptExplorerAction": "open",
-  "npm.autoDetect": "on"
+  "npm.autoDetect": "on",
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }

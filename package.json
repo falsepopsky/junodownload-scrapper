@@ -1,16 +1,22 @@
 {
   "name": "junodownload-scrapper",
   "version": "0.2.0",
-  "description": "junodownload scrapper",
-  "main": "./dist/index.js",
+  "description": "junodownload scrapper for new and coming soon releases",
+  "exports": "./dist/index.js",
+  "type": "module",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/index.ts",
-    "prettier-format": "prettier --cache --write .",
-    "lint": "eslint",
-    "build": "rm -rf dist && tsc",
+    "dev": "tsx watch src/index.ts",
+    "prettier-format": "prettier --cache -w .",
+    "lint": "eslint . --cache --cache-location \"./node_modules/.cache/eslint/\"",
+    "prebuild": "rm -rf dist",
+    "build": "tsc",
     "start": "node dist/index.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "pnpm prettier-format && pnpm lint"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "node",
     "junodownload",
@@ -23,18 +29,19 @@
     "cheerio": "1.0.0-rc.12"
   },
   "devDependencies": {
-    "@types/node": "^18.7.6",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
-    "eslint": "^8.22.0",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.4",
-    "eslint-plugin-promise": "^6.0.0",
-    "husky": "^8.0.1",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.2",
     "prettier": "^2.7.1",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "*"
+    "tsx": "^3.12.0",
+    "typescript": "^4.8.4"
   },
   "engines": {
     "node": ">=18",
