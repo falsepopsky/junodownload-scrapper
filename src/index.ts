@@ -1,9 +1,3 @@
-import { JUNOSITE } from './core/constants.js';
-import { fetcher } from './core/fetcher.js';
+import { junoScrapper } from './core/index.js';
 
-async function start(): Promise<void> {
-  const data = await fetcher(JUNOSITE);
-  console.log(data);
-}
-
-start().catch((err) => console.log(err));
+junoScrapper().catch((err) => console.log(err));
