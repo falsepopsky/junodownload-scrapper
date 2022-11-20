@@ -1,10 +1,10 @@
 import * as cheerio from 'cheerio';
-import { ARTISTCLASSNAME, IMAGECLASSNAME, LABELCLASSNAME, TITLECLASSNAME } from './constants.js';
+import { ARTISTCLASSNAME, COVERCLASSNAME, LABELCLASSNAME, TITLECLASSNAME } from './constants.js';
 
 export interface Release {
-  artist?: string;
-  title?: string;
-  label?: string;
+  artist: string;
+  title: string;
+  label: string;
   cover?: string;
 }
 
@@ -33,7 +33,7 @@ export function getReleases(a: cheerio.CheerioAPI, classname: string): Release[]
     const artist = a(release).find(ARTISTCLASSNAME).text();
     const title = a(release).find(TITLECLASSNAME).text();
     const label = a(release).find(LABELCLASSNAME).text();
-    const cover = a(release).find(IMAGECLASSNAME).attr('data-src');
+    const cover = a(release).find(COVERCLASSNAME).attr('data-src');
 
     releases.push({ artist, title, label, cover });
   });

@@ -1,17 +1,21 @@
 import { getReleases, loadHTML, type Release } from './cheerio.js';
-import { COMINGSOON, JUNOSITE, NEWRELEASES } from './constants.js';
+import { CSCLASSNAME, JUNOSITE, NRCLASSNAME } from './constants.js';
 import { fetcher } from './fetcher.js';
 
+/**
+ * Returns an object with coming soon & new releases
+ *
+ */
 export async function junoScrapper(): Promise<
-  { csReleases: Release[]; nrRelease: Release[] } | undefined
+  { comingSoon: Release[]; newReleases: Release[] } | undefined
 > {
   const response = await fetcher(JUNOSITE);
 
   if (typeof response === 'string') {
     const cheerioLoaded = loadHTML(response);
-    const csReleases = getReleases(cheerioLoaded, COMINGSOON);
-    const nrRelease = getReleases(cheerioLoaded, NEWRELEASES);
+    const comingSoon = getReleases(cheerioLoaded, CSCLASSNAME);
+    const newReleases = getReleases(cheerioLoaded, NRCLASSNAME);
 
-    return { csReleases, nrRelease };
+    return { comingSoon, newReleases };
   }
 }
