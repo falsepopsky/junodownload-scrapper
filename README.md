@@ -47,9 +47,30 @@ pnpm install
 pnpm build
 ```
 
+```JavaScript
+import { junoScrapper } from './dist/index.js';
+
+async function start() {
+  try {
+    const releases = await junoScrapper();
+    console.log(releases);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+start().catch((err) => console.log(err));
 ```
-pnpm start
+
+or
+
 ```
+pnpm dev
+```
+
+#### :scroll: License
+
+[MIT](https://github.com/falsepopsky/junodownload-scrapper/blob/main/LICENSE)
 
 #### :open_file_folder: Folder Structure
 

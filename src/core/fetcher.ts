@@ -3,18 +3,14 @@
  *
  * @param url - Input of the website
  */
-export async function fetcher(url: string): Promise<string | Error | undefined> {
+export async function fetcher(url: string): Promise<string | undefined> {
   try {
     const res = await fetch(url);
     if (!res.ok) {
-      throw new Error("There's something wrong with the website");
+      throw new Error(`There's something wrong with the website: ${res.status}`);
     }
     return await res.text();
   } catch (error) {
-    if (error instanceof Error) {
-      return error;
-    } else {
-      console.error(error);
-    }
+    console.error(error);
   }
 }
