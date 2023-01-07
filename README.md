@@ -6,12 +6,14 @@
 
 ## :information_source: About
 
-With this scrapper you can get the new and coming soon releases `information` from junodownload website. Like the folowing
+With this scrapper you can get the `new` and `coming soon` releases `information` from junodownload website. Like the following:
 
-- Artist
-- Album name
-- Label
-- Cover
+| Information   | New Releases       | Coming Soon        |
+| ------------- | ------------------ | ------------------ |
+| Artist        | :heavy_check_mark: | :heavy_check_mark: |
+| Album (title) | :heavy_check_mark: | :heavy_check_mark: |
+| Label         | :heavy_check_mark: | :heavy_check_mark: |
+| Cover (url)   | :heavy_check_mark: | :heavy_check_mark: |
 
 <div align="center">
     <img src="docs/media/new_releases.png" alt="JunoDownload new releases"/>
@@ -47,25 +49,26 @@ pnpm install
 pnpm build
 ```
 
+```
+pnpm dev
+```
+
+or import this package
+
 ```JavaScript
 import { junoScrapper } from './dist/index.js';
 
 async function start() {
   try {
     const releases = await junoScrapper();
-    console.log(releases);
+    console.log(releases.get('New releases'));
+    console.log(releases.get('Coming soon'));
   } catch (err) {
     console.log(err);
   }
 }
 
 start().catch((err) => console.log(err));
-```
-
-or
-
-```
-pnpm dev
 ```
 
 #### :scroll: License
@@ -77,6 +80,7 @@ pnpm dev
 ```
     .
     ├── docs                    # Documentation files
+    ├── dev                     # Run the package as a dev
     ├── src                     # Source files
     └── README.md
 ```
