@@ -1,5 +1,12 @@
 import * as cheerio from 'cheerio';
-import { ARTISTCLASSNAME, COVERCLASSNAME, LABELCLASSNAME, TITLECLASSNAME } from './constants.js';
+import {
+  ARTISTCLASSNAME,
+  COVERCLASSNAME,
+  CSCLASSNAME,
+  LABELCLASSNAME,
+  NRCLASSNAME,
+  TITLECLASSNAME,
+} from './constants.js';
 
 export interface Release {
   artist: string;
@@ -10,7 +17,6 @@ export interface Release {
 
 /**
  * Returns the cheerio object loaded with the current plain html text.
- *
  * @param html - Plain html text.
  * @returns cheerio object.
  */
@@ -20,20 +26,23 @@ export function loadHTML(html: string): cheerio.CheerioAPI {
 }
 
 /**
- * Returns an array of objects with release information.
- *
- * @param a - cheerio object.
- * @param classname - input of the classname to scrap.
+ * Returns an array of objects with releases.
+ * @param c - cheerio object.
+ * @param isNewRelease - boolean, if it's true return `new releases` otherwise `coming soon releases`.
  */
-export function getReleases(a: cheerio.CheerioAPI, classname: string): Release[] {
+export function getReleases(c: cheerio.CheerioAPI, isNewRelease: boolean): Release[] {
   const releases: Release[] = [];
-  const scrapReleases = a(classname);
+  let classname: string;
+
+  isNewRelease ? (classname = NRCLASSNAME) : (classname = CSCLASSNAME);
+
+  const scrapReleases = c(classname);
 
   scrapReleases.each((_i, release) => {
-    const artist = a(release).find(ARTISTCLASSNAME).text();
-    const title = a(release).find(TITLECLASSNAME).text();
-    const label = a(release).find(LABELCLASSNAME).text();
-    const cover = a(release).find(COVERCLASSNAME).attr('data-src');
+    const artist = c(release).find(ARTISTCLASSNAME).text();
+    const title = c(release).find(TITLECLASSNAME).text();
+    const label = c(release).find(LABELCLASSNAME).text();
+    const cover = c(release).find(COVERCLASSNAME).attr('data-src');
 
     releases.push({ artist, title, label, cover });
   });
