@@ -6,12 +6,13 @@
   "type": "module",
   "scripts": {
     "dev": "tsx dev/index.ts",
-    "prettier-format": "prettier --cache -w .",
+    "format": "prettier --cache -w .",
     "lint": "eslint . --cache --cache-location \"./node_modules/.cache/eslint/\"",
-    "prebuild": "rm -rf dist",
+    "clean": "rm -rf dist",
+    "prebuild": "pnpm run clean",
     "build": "tsc",
     "prepare": "husky install",
-    "pre-commit": "pnpm prettier-format && pnpm lint"
+    "pre-commit": "pnpm format && pnpm lint"
   },
   "files": [
     "dist"
@@ -29,18 +30,17 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
-    "@typescript-eslint/eslint-plugin": "^5.48.0",
-    "@typescript-eslint/parser": "^5.48.0",
-    "eslint": "^8.31.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-config-standard-with-typescript": "^26.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
     "husky": "^8.0.3",
-    "prettier": "^2.8.2",
-    "tsx": "^3.12.1",
-    "typescript": "^4.9.4"
+    "prettier": "^2.8.3",
+    "tsx": "^3.12.2",
+    "typescript": "^4.9.5"
   },
   "engines": {
     "node": ">=18",
