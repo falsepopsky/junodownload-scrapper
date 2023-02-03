@@ -1,12 +1,5 @@
 import * as cheerio from 'cheerio';
-import {
-  ARTISTCLASSNAME,
-  COVERCLASSNAME,
-  CSCLASSNAME,
-  LABELCLASSNAME,
-  NRCLASSNAME,
-  TITLECLASSNAME,
-} from './constants.js';
+import { ARTISTCN, COVERCN, CSCN, LABELCN, NRCN, TITLECN } from './constants.js';
 
 export interface Release {
   artist: string;
@@ -34,15 +27,15 @@ export function getReleases(c: cheerio.CheerioAPI, isNewRelease: boolean): Relea
   const releases: Release[] = [];
   let classname: string;
 
-  isNewRelease ? (classname = NRCLASSNAME) : (classname = CSCLASSNAME);
+  isNewRelease ? (classname = NRCN) : (classname = CSCN);
 
   const scrapReleases = c(classname);
 
   scrapReleases.each((_i, release) => {
-    const artist = c(release).find(ARTISTCLASSNAME).text();
-    const title = c(release).find(TITLECLASSNAME).text();
-    const label = c(release).find(LABELCLASSNAME).text();
-    const cover = c(release).find(COVERCLASSNAME).attr('data-src');
+    const artist = c(release).find(ARTISTCN).text();
+    const title = c(release).find(TITLECN).text();
+    const label = c(release).find(LABELCN).text();
+    const cover = c(release).find(COVERCN).attr('data-src');
 
     releases.push({ artist, title, label, cover });
   });
