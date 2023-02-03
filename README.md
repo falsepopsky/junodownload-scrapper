@@ -30,7 +30,7 @@ With this scrapper you can get the `new` and `coming soon` releases `information
 **:computer: System requirements**
 
 - [Node.js](https://nodejs.org/en/download/current/) >=18
-- MacOS, Windows (including WSL), and Linux are supported
+- MacOS, Windows (WSL or Git Bash), and Linux are supported
 - [pnpm](https://pnpm.io/)
 
 **:arrows_counterclockwise: Clone repository**

@@ -1,6 +1,5 @@
 .vscode
 .github
-node_modules
 docs
 dist
 pnpm-lock.yaml
