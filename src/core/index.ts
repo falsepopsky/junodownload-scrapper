@@ -8,7 +8,7 @@ type JunoRelease = 'Coming soon' | 'New releases';
  * Returns a Map object with `Coming soon` & `New releases`
  */
 export async function junoScrapper(): Promise<Map<JunoRelease, Release[]>> {
-  const junoReleases: Map<JunoRelease, Release[]> = new Map();
+  const junoReleases = new Map<JunoRelease, Release[]>();
 
   const response = await fetcher(JUNOSITE);
   const cheerioLoaded = loadHTML(response);

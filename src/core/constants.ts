@@ -1,17 +1,11 @@
 const JUNOSITE = 'https://www.junodownload.com/';
-const NRCLASSNAME = '.home-top .jw-body .jw-container .jw-item';
-const CSCLASSNAME = '.home-coming-soon .jw-body .jw-container .jw-item';
-const ARTISTCLASSNAME = '.jw-artist';
-const TITLECLASSNAME = '.jw-title';
-const LABELCLASSNAME = '.jw-label';
-const COVERCLASSNAME = '.img-release img';
 
-export {
-  JUNOSITE,
-  NRCLASSNAME,
-  CSCLASSNAME,
-  ARTISTCLASSNAME,
-  TITLECLASSNAME,
-  LABELCLASSNAME,
-  COVERCLASSNAME,
-};
+// Classnames targets
+const NRCN = '.home-top .jw-body .jw-container .jw-item';
+const CSCN = '.home-coming-soon .jw-body .jw-container .jw-item';
+const ARTISTCN = '.jw-artist';
+const TITLECN = '.jw-title';
+const LABELCN = '.jw-label';
+const COVERCN = '.img-release img';
+
+export { JUNOSITE, NRCN, CSCN, ARTISTCN, TITLECN, LABELCN, COVERCN };
