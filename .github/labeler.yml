@@ -1,5 +1,5 @@
 documentation:
   - 'docs/*'
-  - readme.md
+  - ./readme.md
 enhancement:
-  - 'src/**/*.ts'
+  - any: ['src/**/*.ts', '!**/?(*.)+(spec|test).+(ts)']
