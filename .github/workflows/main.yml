@@ -19,6 +19,11 @@ jobs:
         with:
           node-version: 18.x
           cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm lint
-      - run: pnpm test
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Run lint
+        run: pnpm lint
+      - name: Run tests
+        run: pnpm test
+      - name: Run build
+        run: pnpm build
