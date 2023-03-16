@@ -1,4 +1,5 @@
-import * as cheerio from 'cheerio';
+import type { CheerioAPI } from 'cheerio';
+import { load } from 'cheerio';
 import { ARTISTCN, COVERCN, CSCN, LABELCN, NRCN, TITLECN } from './constants.js';
 
 export interface Release {
@@ -13,8 +14,8 @@ export interface Release {
  * @param html - Plain html text.
  * @returns cheerio object.
  */
-export function loadHTML(html: string): cheerio.CheerioAPI {
-  const $ = cheerio.load(html);
+export function loadHTML(html: string): CheerioAPI {
+  const $ = load(html);
   return $;
 }
 
@@ -23,7 +24,7 @@ export function loadHTML(html: string): cheerio.CheerioAPI {
  * @param c - cheerio object.
  * @param isNewRelease - boolean, if it's true return `new releases` otherwise `coming soon releases`.
  */
-export function getReleases(c: cheerio.CheerioAPI, isNewRelease: boolean): Release[] {
+export function getReleases(c: CheerioAPI, isNewRelease: boolean): Release[] {
   const releases: Release[] = [];
   let classname: string;
 
