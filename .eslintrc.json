@@ -30,5 +30,5 @@
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error"
   },
-  "ignorePatterns": ["/*", "!/src", "!/dev"]
+  "ignorePatterns": ["/*", "!/src"]
 }
