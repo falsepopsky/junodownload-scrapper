@@ -6,7 +6,7 @@
 
 ## :information_source: About
 
-With this scrapper you can get the `new` and `coming soon` releases `information` from junodownload website. Like the following:
+This scraper allows you to retrieve information on `new` and `coming soon` releases from the junodownload website.
 
 | Information   | New Releases       | Coming Soon        |
 | ------------- | ------------------ | ------------------ |
