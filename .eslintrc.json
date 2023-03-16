@@ -2,9 +2,10 @@
   "root": true,
   "env": {
     "es2022": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
-  "plugins": ["@typescript-eslint", "promise"],
+  "plugins": ["@typescript-eslint", "promise", "jest"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -12,40 +13,21 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "standard-with-typescript",
     "plugin:n/recommended",
-    "plugin:promise/recommended"
+    "plugin:promise/recommended",
+    "plugin:jest/recommended",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "tsconfig.json"
+    "project": "tsconfig.eslint.json"
   },
   "rules": {
-    "semi": "off",
-    "space-before-function-paren": "off",
-    "@typescript-eslint/semi": "off",
-    "@typescript-eslint/space-before-function-paren": "off",
-    "@typescript-eslint/comma-dangle": "off",
-    "@typescript-eslint/member-delimiter-style": [
-      "error",
-      {
-        "multiline": {
-          "delimiter": "comma",
-          "requireLast": true
-        },
-        "singleline": {
-          "delimiter": "comma",
-          "requireLast": true
-        },
-        "overrides": {
-          "interface": {
-            "multiline": {
-              "delimiter": "semi",
-              "requireLast": true
-            }
-          }
-        }
-      }
-    ]
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
   }
 }

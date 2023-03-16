@@ -11,5 +11,6 @@
   "npm.scriptExplorerAction": "open",
   "npm.autoDetect": "on",
   "npm.packageManager": "pnpm",
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
