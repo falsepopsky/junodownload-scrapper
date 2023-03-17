@@ -42,8 +42,8 @@ export function getReleases(c: CheerioAPI, isNewRelease: boolean): Release[] {
       .replace(/\s\/\s/g, ' / ')
       .trim();
     const title = c(node).find(TITLECN).text().replace(/\n/g, '').trim();
-    const label = c(node).find(LABELCN).text().replace(/\n/g, '').trim();
-    const cover = c(node).find(COVERCN).attr('data-src')?.replace(/\n/g, '').trim();
+    const label = c(node).find(LABELCN).text().trim();
+    const cover = c(node).find(COVERCN).attr('data-src');
 
     releases.push({ artist, title, label, cover });
   });
