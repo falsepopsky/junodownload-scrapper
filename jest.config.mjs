@@ -1,4 +1,4 @@
-/** @type {import('ts-jest').JestConfigWithTsJest} */
+/** @type {import('jest').Config} */
 
 export default {
   testEnvironment: 'node',
@@ -10,15 +10,9 @@ export default {
     '^(\\.{1,2}/.*)\\.(m)?js$': '$1',
   },
   extensionsToTreatAsEsm: ['.ts'],
-  preset: 'ts-jest/presets/default-esm',
   testMatch: ['**/?(*.)+(spec|test).+(ts|js)'],
   transform: {
-    '^.+\\.m?[tj]s?$': [
-      'ts-jest',
-      {
-        useESM: true,
-      },
-    ],
+    '^.+\\.m?[tj]s?$': '@swc/jest',
   },
   collectCoverageFrom: ['src/core/*.ts', '!src/**/*.d.ts', '!src/core/index.ts'],
 };
