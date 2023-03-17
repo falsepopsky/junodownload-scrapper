@@ -2,7 +2,7 @@ import type { CheerioAPI } from 'cheerio';
 import { load } from 'cheerio';
 import { ARTISTCN, COVERCN, CSCN, LABELCN, NRCN, TITLECN } from './constants.js';
 
-export interface Release {
+interface Release {
   artist: string;
   title: string;
   label: string;
@@ -20,9 +20,10 @@ export function loadHTML(html: string): CheerioAPI {
 }
 
 /**
- * Returns an array of objects with releases.
+ * Returns an array of objects.
  * @param c - cheerio object.
- * @param isNewRelease - boolean, if it's true return `new releases` otherwise `coming soon releases`.
+ * @param isNewRelease - boolean indicating whether to scrape new releases (`true`) or coming soon releases (`false`).
+ * @returns an array of objects representing the scraped releases.
  */
 export function getReleases(c: CheerioAPI, isNewRelease: boolean): Release[] {
   const releases: Release[] = [];
@@ -30,13 +31,13 @@ export function getReleases(c: CheerioAPI, isNewRelease: boolean): Release[] {
 
   isNewRelease ? (classname = NRCN) : (classname = CSCN);
 
-  const scrapReleases = c(classname);
+  const nodes = c(classname);
 
-  scrapReleases.each((_i, release) => {
-    const artist = c(release).find(ARTISTCN).text();
-    const title = c(release).find(TITLECN).text();
-    const label = c(release).find(LABELCN).text();
-    const cover = c(release).find(COVERCN).attr('data-src');
+  nodes.each((_i, node) => {
+    const artist = c(node).find(ARTISTCN).text();
+    const title = c(node).find(TITLECN).text();
+    const label = c(node).find(LABELCN).text();
+    const cover = c(node).find(COVERCN).attr('data-src');
 
     releases.push({ artist, title, label, cover });
   });
