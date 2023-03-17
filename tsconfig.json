@@ -2,10 +2,10 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "NodeNext",
-    "outDir": "./dist",
-    "moduleResolution": "NodeNext",
-    "declaration": true,
+    "moduleResolution": "nodenext",
     "rootDir": "./src",
+    "outDir": "./dist",
+    "declaration": true,
     "resolveJsonModule": true,
     "allowJs": true,
     "checkJs": true,
@@ -19,5 +19,5 @@
     "lib": ["ESNext", "DOM"]
   },
   "include": ["src"],
-  "exclude": ["node_modules", "**/*.d.ts"]
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.d.ts"]
 }

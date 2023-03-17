@@ -1,3 +1,1 @@
-import { junoScrapper } from './core/index.js';
-
-export { junoScrapper };
+export { junoScrapper } from './core/index.js';
