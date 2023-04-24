@@ -13,11 +13,13 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitAny": true,
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "removeComments": true,
-    "lib": ["ESNext", "DOM"]
+    "lib": ["ESNext"]
   },
   "include": ["src"],
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.d.ts"]
+  "exclude": ["node_modules"]
 }

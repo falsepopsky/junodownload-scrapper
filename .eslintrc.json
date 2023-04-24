@@ -2,33 +2,45 @@
   "root": true,
   "env": {
     "es2022": true,
-    "node": true,
-    "jest": true
+    "node": true
   },
-  "plugins": ["@typescript-eslint", "promise", "jest"],
+  "plugins": ["@typescript-eslint", "promise"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "standard-with-typescript",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:n/recommended",
     "plugin:promise/recommended",
-    "plugin:jest/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "tsconfig.eslint.json"
+    "project": "tsconfig.json"
   },
-  "rules": {
-    "jest/no-disabled-tests": "warn",
-    "jest/no-focused-tests": "error",
-    "jest/no-identical-title": "error",
-    "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error"
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "./tsconfig.json"
+      }
+    }
   },
+  "overrides": [
+    {
+      "env": { "jest": true },
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended", "plugin:jest/style"],
+      "files": ["**/*.test.ts", "**/*.spec.ts"]
+    }
+  ],
   "ignorePatterns": ["/*", "!/src"]
 }

@@ -3,9 +3,9 @@
 export default {
   testEnvironment: 'node',
   clearMocks: true,
-  collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
+  coverageReporters: ['text-summary', 'text'],
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.(m)?js$': '$1',
   },
