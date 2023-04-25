@@ -1,12 +1,26 @@
 # junodownload scrapper
 
 <div align="center">
-  	<img src="docs/media/logo.jpg" alt="junodownload Logo"/>
+  	<img src="docs/images/logo.jpg" alt="junodownload Logo"/>
 </div>
 
 ## :information_source: About
 
-This scraper allows you to retrieve information on `new` and `coming soon` releases from the junodownload website.
+This scraper allows you to retrieve information on `new` and `coming soon` releases from the
+junodownload website.
+
+<details><summary>Release targets:</summary>
+  <div align="center">
+    <img src="docs/images/nr.png" alt="junodownload new releases"/>
+    <img src="docs/images/cs.png" alt="junodownload coming soon releases"/>
+  </div>
+</details>
+
+## :sparkles: Features
+
+- Built with TypeScript for full typing support
+- Uses the native `fetch` module from Node.js for making HTTP requests
+- ESM only
 
 | Information   | New Releases       | Coming Soon        |
 | ------------- | ------------------ | ------------------ |
@@ -15,47 +29,9 @@ This scraper allows you to retrieve information on `new` and `coming soon` relea
 | Label         | :heavy_check_mark: | :heavy_check_mark: |
 | Cover (url)   | :heavy_check_mark: | :heavy_check_mark: |
 
-<div align="center">
-    <img src="docs/media/new_releases.png" alt="JunoDownload new releases"/>
-  	<img src="docs/media/coming_soon.png" alt="JunoDownload coming soon releases"/>
-</div>
+## :beginner: Usage
 
-## :package: Built with
-
-- [cheerio](https://www.npmjs.com/package/cheerio)
-- [fetch](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch)
-
-## :pushpin: Setup
-
-**:computer: System requirements**
-
-- [Node.js](https://nodejs.org/en/download/current/) >=18
-- MacOS, Windows (WSL or Git Bash), and Linux are supported
-- [pnpm](https://pnpm.io/)
-
-**:arrows_counterclockwise: Clone repository**
-
-```
-git clone git@github.com:falsepopsky/junodownload-scrapper.git
-```
-
-**:checkered_flag: Install and start the scrapper**
-
-```
-pnpm install
-```
-
-```
-pnpm build
-```
-
-```
-pnpm dev
-```
-
-or import this package
-
-```JavaScript
+```javascript
 import { junoScrapper } from './dist/index.js';
 
 async function start() {
@@ -71,16 +47,12 @@ async function start() {
 start().catch((err) => console.log(err));
 ```
 
-#### :scroll: License
+## :page_facing_up: Docs
 
-[MIT](https://github.com/falsepopsky/junodownload-scrapper/blob/main/LICENSE)
+- [For developers](https://github.com/falsepopsky/junodownload-scrapper/blob/main/docs/setup.md)
 
-#### :open_file_folder: Folder Structure
+## :scroll: License
 
-```
-    .
-    ├── docs                    # Documentation files
-    ├── dev                     # Run the package as a dev
-    ├── src                     # Source files
-    └── README.md
-```
+`junodownload-scrapper` is licensed under the
+[MIT](https://github.com/falsepopsky/junodownload-scrapper/blob/main/LICENSE.md) license - © 2020
+[falsepopsky](https://github.com/falsepopsky).

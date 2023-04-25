@@ -1,9 +1,9 @@
-import { describe, expect, test } from '@jest/globals';
 import { fetcher } from './fetcher.js';
 
 describe('fetcher function', () => {
   test('throws an error when response.ok is not true', async () => {
     const urlStatusNotOK = 'https://httpstat.us/404';
+
     await expect(fetcher(urlStatusNotOK)).rejects.toThrow(Error);
   });
 

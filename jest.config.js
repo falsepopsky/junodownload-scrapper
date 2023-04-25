@@ -3,9 +3,9 @@
 export default {
   testEnvironment: 'node',
   clearMocks: true,
-  collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
+  coverageReporters: ['text-summary', 'text'],
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.(m)?js$': '$1',
   },
@@ -14,5 +14,5 @@ export default {
   transform: {
     '^.+\\.m?[tj]s?$': '@swc/jest',
   },
-  collectCoverageFrom: ['src/core/*.ts', '!src/**/*.d.ts', '!src/core/index.ts'],
+  collectCoverageFrom: ['src/*.ts', '!src/**/*.d.ts', '!src/{index,playground}.ts'],
 };
