@@ -1,7 +1,10 @@
 /**
- * Returns the HTML text from the website if there's no error.
+ * Fetches the content of a given URL.
  *
- * @param url - Input of the website
+ * @async
+ * @param {string} url - The URL to fetch.
+ * @returns {string} A Promise that resolves to the fetched content as a string.
+ * @throws {Error} If the response status is not OK.
  */
 export async function fetcher(url: string): Promise<string> {
   const res = await fetch(url);
