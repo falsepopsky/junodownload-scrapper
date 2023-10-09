@@ -1,0 +1,7 @@
+"📚 docs":
+  - "docs/**"
+  - "README.md"
+"📦 core":
+  - "src/**"
+"🧪 tests":
+  - "tests/**"

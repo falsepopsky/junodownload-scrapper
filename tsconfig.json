@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
-    "rootDir": "./src",
-    "outDir": "./dist",
+    "target": "es2022",
+    "module": "node16",
+    "moduleResolution": "node16",
+    "rootDir": ".",
     "declaration": true,
     "resolveJsonModule": true,
     "allowJs": true,
@@ -18,8 +17,10 @@
     "noImplicitOverride": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "lib": ["ESNext"]
+    "lib": ["es2023"],
+    "verbatimModuleSyntax": true,
+    "noErrorTruncation": true
   },
-  "include": ["src"],
+  "include": ["src", "tests"],
   "exclude": ["node_modules"]
 }

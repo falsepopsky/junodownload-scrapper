@@ -1,0 +1,22 @@
+{
+	"name": "Ubuntu",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"nodeGypDependencies": true,
+			"version": "18.18.0",
+			"nvmVersion": "latest"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"editorconfig.editorconfig",
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint",
+				"github.vscode-github-actions",
+        "orta.vscode-jest"
+			]
+		}
+	}
+}
