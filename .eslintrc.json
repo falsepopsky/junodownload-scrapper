@@ -104,5 +104,5 @@
     "@typescript-eslint/array-type": ["error", { "default": "array-simple" }],
     "@typescript-eslint/no-import-type-side-effects": "error"
   },
-  "ignorePatterns": ["/*", "!/src"]
+  "ignorePatterns": ["/*", "!/src", "!/tests"]
 }

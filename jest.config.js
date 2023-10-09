@@ -10,6 +10,7 @@ export default {
     '^(\\.{1,2}/.*)\\.(m)?js$': '$1',
   },
   extensionsToTreatAsEsm: ['.ts'],
+  setupFilesAfterEnv: ['./jest.setup.js'],
   testMatch: ['**/?(*.)+(spec|test).+(ts|js)'],
   transform: {
     '^.+\\.m?[tj]s?$': '@swc/jest',
